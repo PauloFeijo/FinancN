@@ -1,0 +1,6 @@
+Comandos
+
+sudo yarn init -y : inicia o projeto
+sudo yarn add express : rotas
+sudo yarn add nodemon -D : atualização do conteudo automática
+sudo yarn add knex pg : utilização de banco postgres
