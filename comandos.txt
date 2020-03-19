@@ -4,3 +4,13 @@ sudo yarn init -y : inicia o projeto
 sudo yarn add express : rotas
 sudo yarn add nodemon -D : atualização do conteudo automática
 sudo yarn add knex pg : utilização de banco postgres
+
+Migrações com knex
+sudo knex migrate:make create_table_conta : cria uma migração
+sudo knex migrate:latest : atualiza a base com todas as migrações
+sudo knex migrate:rollback : desfaz todas alterações
+
+
+Criação do banco pg
+psql -U postgres -h localhost
+postgres=# create database financ2;
