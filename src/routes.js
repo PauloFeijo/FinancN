@@ -1,10 +1,10 @@
-const { Router } = require('express')
+module.exports = app => {
+    app.route('/conta')
+        .get(app.src.controller.ContaController.list)
+        .post(app.src.controller.ContaController.insert)
 
-const routes = Router()
-
-routes.get('/test', (req, res) => {
-    console.log('Call route test')
-    return res.json('test')
-})
-
-module.exports = routes
+    app.route('/conta/:id')
+        .delete(app.src.controller.ContaController.delete)
+        .put(app.src.controller.ContaController.update)
+        .get(app.src.controller.ContaController.find)
+}

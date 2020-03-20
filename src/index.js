@@ -1,7 +1,14 @@
 const app = require('express')()
-const routes = require('./routes')
+const db = require('./conf/db')
+const consign = require('consign')
 
-app.use(routes)
+consign()
+    .then('./src/conf/middlewares.js')
+    .then('./src/controller')
+    .then('./src/routes.js')
+    .into(app)
+
+app.db = db
 
 app.listen(4000, () => {
     console.log('Server at 4000')
