@@ -1,6 +1,7 @@
 const app = require('express')()
 const db = require('./conf/db')
 const consign = require('consign')
+const config = require('./conf/config')
 
 consign()
     .then('./src/conf/middlewares.js')
@@ -10,6 +11,6 @@ consign()
 
 app.db = db
 
-app.listen(4000, () => {
-    console.log('Server at 4000')
+app.listen(config.port, () => {
+    console.log('Server at '+ config.port)
 })
